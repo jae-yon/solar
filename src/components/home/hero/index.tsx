@@ -1,6 +1,8 @@
 import { Box, Image } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
+import HeroContents from './HeroContents';
+
 import heroImage1 from '@/assets/images/hero_img_01.jpg';
 import heroImage2 from '@/assets/images/hero_img_02.jpg';
 import heroImage3 from '@/assets/images/hero_img_03.jpeg';
@@ -70,6 +72,7 @@ export default function Hero() {
           />
         </Box>
       ))}
+      <HeroContents />
     </Box>
   );
 }
