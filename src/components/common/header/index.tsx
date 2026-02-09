@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { Box } from '@chakra-ui/react';
 
-import { HeaderLogoLeft, HeaderLogoTop } from './HeaderLayout';
+import { HeaderDesktop } from './HeaderDesktop';
 
 const headerMenu = [
   {
@@ -69,23 +69,41 @@ const headerMenu = [
 ]
 
 export default function Header() {
-  const [isLogoLeft, setIsLogoLeft] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    });
+  }, []);
 
   useEffect(() => {
     if (window.innerWidth < 768) {
-      setIsLogoLeft(false);
+      setIsDesktop(false);
     } else {
-      setIsLogoLeft(true);
+      setIsDesktop(true);
     }
   }, [window.innerWidth]);
 
   return (
-    <Box width='100%' backgroundColor='transparent'>
-      {isLogoLeft ? (
-        <HeaderLogoLeft isLogoLeft={isLogoLeft} setIsLogoLeft={setIsLogoLeft} headerMenu={headerMenu} />
-      ) : (
-        <HeaderLogoTop isLogoLeft={isLogoLeft} setIsLogoLeft={setIsLogoLeft} headerMenu={headerMenu} />
-      )}
+    <Box 
+      width='100%' 
+      position='fixed' 
+      top={0} 
+      left={0} 
+      right={0} 
+      zIndex={1000}
+      transition='all 0.3s ease'
+      boxShadow={isScrolled ? '0 0 10px 0 rgba(0, 0, 0, 0.1)' : 'none'}
+      borderBottom={isScrolled ? '1px solid #e0e0e0' : 'none'}
+      backgroundColor={isScrolled ? 'white' : 'transparent'} 
+    >
+      {isDesktop && <HeaderDesktop headerMenu={headerMenu} />}
     </Box>
   );
 }
