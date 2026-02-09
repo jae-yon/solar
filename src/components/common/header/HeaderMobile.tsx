@@ -48,7 +48,7 @@ export default function HeaderMobile(props: headerLayoutProps) {
           cursor='pointer'
           _active={{ transform: 'scale(0.98)', bg: 'blackAlpha.100' }}
         >
-          <Text fontSize='xl' lineHeight='1' color='gray.800' userSelect='none'>
+          <Text fontSize='xl' lineHeight='1' color={isOpen || props.isScrolled ? 'gray.800' : 'white'} userSelect='none'>
             {isOpen ? '✕' : '☰'}
           </Text>
         </Box>

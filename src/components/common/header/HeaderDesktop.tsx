@@ -4,6 +4,7 @@ import { Box, Collapsible, Image, Link, Text } from '@chakra-ui/react';
 
 interface headerLayoutProps {
   logo: string;
+  isScrolled: boolean;
   headerMenu: { name: string, path: string, childMenu: { name: string, path: string }[] }[];
 }
 
@@ -35,7 +36,7 @@ export default function HeaderDesktop(props: headerLayoutProps) {
                   paddingX={6}
                   paddingY={2}
                   fontSize='lg'
-                  color='gray.700'
+                  color={props.isScrolled ? 'gray.700' : 'white'}
                   fontWeight='medium'
                   transition='all 0.3s ease'
                   borderBottom='3px solid transparent'
@@ -62,7 +63,7 @@ export default function HeaderDesktop(props: headerLayoutProps) {
                         paddingX={4}
                         paddingY={2}
                         fontSize='sm'
-                        color='gray.700'
+                        color={props.isScrolled ? 'gray.700' : 'white'}
                         fontWeight='medium'
                         borderRadius='xl'
                         transition='all 0.3s ease'

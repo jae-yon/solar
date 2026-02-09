@@ -108,7 +108,7 @@ export default function Header() {
       borderBottom={isScrolled ? '1px solid #e0e0e0' : 'none'}
       backgroundColor={isScrolled ? 'white' : 'transparent'} 
     >
-      {isDesktop && <HeaderDesktop logo={logo} headerMenu={headerMenu} />}
+      {isDesktop && <HeaderDesktop logo={logo} isScrolled={isScrolled} headerMenu={headerMenu} />}
       {!isDesktop && <HeaderMobile logo={logo} isScrolled={isScrolled} headerMenu={headerMenu} />}
     </Box>
   );
