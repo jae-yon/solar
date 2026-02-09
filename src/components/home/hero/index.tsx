@@ -4,11 +4,13 @@ import { useEffect, useState } from 'react';
 import heroImage1 from '@/assets/images/hero_img_01.jpg';
 import heroImage2 from '@/assets/images/hero_img_02.jpg';
 import heroImage3 from '@/assets/images/hero_img_03.jpeg';
+import heroImage4 from '@/assets/images/hero_img_04.jpg';
 
 const heroImages = [
   { image: heroImage1 },
   { image: heroImage2 },
   { image: heroImage3 },
+  { image: heroImage4 },
 ];
 
 const FADE_DURATION_MS = 2000;
@@ -38,9 +40,9 @@ export default function Hero() {
         w: '100%',
         h: '100%',
         bgGradient: 'to-b',
-        gradientFrom: 'blackAlpha.800',
-        gradientVia: 'blackAlpha.200',
-        gradientTo: 'transparent',
+        gradientFrom: 'blackAlpha.600',
+        gradientVia: 'whiteAlpha.400',
+        gradientTo: 'whiteAlpha.600',
         opacity: 0.7,
         zIndex: 1,
         pointerEvents: 'none',
