@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { Box } from '@chakra-ui/react';
 
-import { HeaderDesktop } from './HeaderDesktop';
+import logo from '@/assets/vite.svg';
+import HeaderDesktop from './HeaderDesktop';
+import HeaderMobile from './HeaderMobile';
 
 const headerMenu = [
   {
@@ -83,12 +85,15 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    if (window.innerWidth < 768) {
-      setIsDesktop(false);
-    } else {
-      setIsDesktop(true);
-    }
-  }, [window.innerWidth]);
+    const updateIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 960);
+    };
+
+    updateIsDesktop();
+
+    window.addEventListener('resize', updateIsDesktop);
+    return () => window.removeEventListener('resize', updateIsDesktop);
+  }, []);
 
   return (
     <Box 
@@ -103,7 +108,8 @@ export default function Header() {
       borderBottom={isScrolled ? '1px solid #e0e0e0' : 'none'}
       backgroundColor={isScrolled ? 'white' : 'transparent'} 
     >
-      {isDesktop && <HeaderDesktop headerMenu={headerMenu} />}
+      {isDesktop && <HeaderDesktop logo={logo} headerMenu={headerMenu} />}
+      {!isDesktop && <HeaderMobile logo={logo} isScrolled={isScrolled} headerMenu={headerMenu} />}
     </Box>
   );
 }

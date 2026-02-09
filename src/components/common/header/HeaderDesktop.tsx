@@ -1,21 +1,20 @@
 import { useState } from 'react';
 
-import logo from '@/assets/vite.svg';
-
 import { Box, Collapsible, Image, Link, Text } from '@chakra-ui/react';
 
 interface headerLayoutProps {
+  logo: string;
   headerMenu: { name: string, path: string, childMenu: { name: string, path: string }[] }[];
 }
 
-export function HeaderDesktop(props: headerLayoutProps) {
+export default function HeaderDesktop(props: headerLayoutProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Box display='flex' flexDirection='column' alignItems='center' justifyContent='center'>
       {/* logo */}
-      <Box display='flex' alignItems='center' justifyContent='center'>
-        <Image src={logo} alt='logo' width={16} objectFit='cover' padding={4} />
+      <Box display='flex' alignItems='center' justifyContent='center' marginTop={4}>
+        <Image src={props.logo} alt='logo' width={16} objectFit='cover' padding={4} />
       </Box>
       <Box
         display='flex'
