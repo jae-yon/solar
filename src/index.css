@@ -70,6 +70,19 @@
   font-display: swap;
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-animation {
+  animation: scroll 30s linear infinite;
+}
+
 :root {
   font-family: 'Pretendard';
   line-height: 1.5;
