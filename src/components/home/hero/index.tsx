@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 
 import HeroContents from './HeroContents';
 
-import heroImage1 from '@/assets/images/hero_img_01.jpg';
-import heroImage2 from '@/assets/images/hero_img_02.jpg';
-import heroImage3 from '@/assets/images/hero_img_03.jpeg';
-import heroImage4 from '@/assets/images/hero_img_04.jpg';
+import heroImage1 from '@/assets/images/hero/hero_img_01.jpg';
+import heroImage2 from '@/assets/images/hero/hero_img_02.jpg';
+import heroImage3 from '@/assets/images/hero/hero_img_03.jpeg';
+import heroImage4 from '@/assets/images/hero/hero_img_04.jpg';
 
 const heroImages = [
   { image: heroImage1 },

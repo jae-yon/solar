@@ -25,10 +25,10 @@ export default function HeaderDesktop(props: headerLayoutProps) {
         position='relative'
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
-        backgroundColor={props.isScrolled ? 'white' : 'transparent'}
+        backgroundColor={!props.isScrolled ? '' : 'transparent'}
         padding={4}
         margin={4}
-        _hover={{ backgroundColor: 'blackAlpha.300', borderRadius: 'xl', backdropFilter: 'blur(5px)' }}
+        _hover={!props.isScrolled ? { backgroundColor: 'blackAlpha.300', borderRadius: 'xl', backdropFilter: 'blur(5px)' } : {}}
       >
         {/* menu */}
         <Box display='flex' alignItems='start' justifyContent='center' gap={8} paddingX={4} paddingY={4}>
