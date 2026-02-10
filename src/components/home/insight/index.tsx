@@ -50,8 +50,8 @@ const insightData = [
         title: 'REC 현물',
         subTitle: '육지 평균가',
         date: '2026.02.05 (목)',
-        price: '71.50',
-        changePercentage: '+1.12',
+        price: '710.50',
+        changePercentage: '+11.12',
       },
       {
         title: 'SMP + (REC x 1.0)',

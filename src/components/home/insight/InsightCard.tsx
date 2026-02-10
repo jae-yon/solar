@@ -1,5 +1,9 @@
 import { Badge, Card, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 
+import { useCountUp } from '@/hooks/useCountUp';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
+
 interface InsightCardProps {
   title: string;
   subTitle: string;
@@ -9,6 +13,11 @@ interface InsightCardProps {
 }
 
 export function InsightCard(props: InsightCardProps) {
+  const ref = useRef(null);
+  const isView = useInView(ref);
+  
+  const price = useCountUp({ target: parseFloat(props.price), duration: 1500, enabled: isView });
+
   return (
     <Stack>
       <Card.Root 
@@ -24,20 +33,19 @@ export function InsightCard(props: InsightCardProps) {
         _hover={{ transform: 'translateY(-4px)', boxShadow: 'md' }}
       >
         <Card.Header pb={2}>
-          <Flex justify='space-between' align='center'>
-            <Stack gap={1}>
-              <Heading size='3xl' fontWeight='medium' color='gray.900'>{props.title}</Heading>
-              <Text fontSize='xs' fontWeight='medium' letterSpacing='wide' color='gray.500'>{props.subTitle}</Text>
+          <Flex justify='center' align='center'>
+            <Stack textAlign='center' gap={1}>
+              <Heading size='xl' fontWeight='500' color='gray.900'>{props.title}</Heading>
+              <Text fontSize='sm' fontWeight='medium' color='gray.500'>{props.date}</Text>
             </Stack>
-            <Text fontSize='sm' fontWeight='medium' color='gray.500'>{props.date}</Text>
           </Flex>
         </Card.Header>
 
         <Card.Body py={4}>
           <Stack gap={2}>
-            <Flex align='baseline' gap={2}>
-              <Text fontSize='5xl' fontWeight='700' color='gray.900' lineHeight='1'>
-                {props.price}
+            <Flex justify='center' align='baseline' gap={2}>
+              <Text ref={ref} fontSize='6xl' fontWeight='600' color='gray.900' lineHeight='1'>
+                {price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </Text>
               <Text fontSize='sm' fontWeight='bold' color='gray.500'>
                 원/kWh
@@ -45,7 +53,7 @@ export function InsightCard(props: InsightCardProps) {
             </Flex>
             
             {/* 등락 표시 부분 */}
-            <Flex align='center' gap={1.5}>
+            <Flex justify='center' align='center' gap={2}>
               <Badge 
                 variant='subtle' 
                 px={3} 

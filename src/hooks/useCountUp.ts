@@ -1,0 +1,47 @@
+import { useEffect, useState } from 'react';
+
+interface UseCountUpProps {
+  target: number;
+  duration: number;
+  enabled?: boolean;
+  decimals?: number;
+}
+
+export const useCountUp = (props: UseCountUpProps) => {
+  const { target, duration, enabled = true, decimals = 2 } = props;
+
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    if (!enabled) return;
+
+    let rafId: number;
+    const startTime = performance.now();
+
+    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+
+    const animate = (time: number) => {
+      const elapsed = time - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeOutCubic(progress);
+
+      const raw = eased * target;
+
+      // 소수점 자릿수 고정
+      const fixed = Number(raw.toFixed(decimals));
+      setValue(fixed);
+
+      if (progress < 1) {
+        rafId = requestAnimationFrame(animate);
+      } else {
+        setValue(Number(target.toFixed(decimals)));
+      }
+    };
+
+    rafId = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(rafId);
+  }, [enabled, target, duration, decimals]);
+
+  return value;
+};
