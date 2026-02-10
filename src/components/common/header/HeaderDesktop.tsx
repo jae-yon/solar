@@ -31,7 +31,7 @@ export default function HeaderDesktop(props: headerLayoutProps) {
         _hover={!props.isScrolled ? { backgroundColor: 'blackAlpha.300', borderRadius: 'xl', backdropFilter: 'blur(5px)' } : {}}
       >
         {/* menu */}
-        <Box display='flex' alignItems='start' justifyContent='center' gap={8} paddingX={4} paddingY={4}>
+        <Box display='flex' alignItems='start' justifyContent='center' gap={8} paddingX={4} >
           {/* default menu */}
           {props.headerMenu.map((menu) => (
             <Box key={menu.name} display='flex' flexDirection='column' alignItems='center' justifyContent='center'>

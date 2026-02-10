@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { Box } from '@chakra-ui/react';
 
+import { useResponsive } from '@/hooks/useResponsive';
 import logo from '@/assets/vite.svg';
 import HeaderDesktop from './HeaderDesktop';
 import HeaderMobile from './HeaderMobile';
@@ -71,7 +72,8 @@ const headerMenu = [
 ]
 
 export default function Header() {
-  const [isDesktop, setIsDesktop] = useState(true);
+  const { isDesktop } = useResponsive();
+  
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -82,17 +84,6 @@ export default function Header() {
         setIsScrolled(false);
       }
     });
-  }, []);
-
-  useEffect(() => {
-    const updateIsDesktop = () => {
-      setIsDesktop(window.innerWidth >= 960);
-    };
-
-    updateIsDesktop();
-
-    window.addEventListener('resize', updateIsDesktop);
-    return () => window.removeEventListener('resize', updateIsDesktop);
   }, []);
 
   return (
