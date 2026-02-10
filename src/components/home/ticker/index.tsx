@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Heading, Text } from '@chakra-ui/react';
 
 import TickerCard from './TickerCard';
 
@@ -10,6 +10,8 @@ import tickerImage05 from '@/assets/images/ticker/gs_eps.jpg';
 import tickerImage06 from '@/assets/images/ticker/kps.jpg';
 import tickerImage07 from '@/assets/images/ticker/samsung.jpg';
 import tickerImage08 from '@/assets/images/ticker/posco.jpg';
+
+import SlideFade from '@/components/common/SlideFade';
 
 const tickerItems = [
   { id: '1', image: tickerImage01, name: 'Doosan' },
@@ -26,8 +28,21 @@ export default function Ticker() {
   const duplicatedItems = [...tickerItems, ...tickerItems];
 
   return (
-    <Box overflow='hidden' bg='gray.50'>
-      <Box overflow='hidden' py={4}>
+    <Box overflow='hidden' my={12}>
+      <Box textAlign='center' py={10} bg='whiteAlpha.800'>
+        <SlideFade>
+        <Heading
+          fontSize={{ base: "36px", md: "48px" }}
+          fontWeight="600"
+          color="gray.800"
+          lineHeight="1.1"
+          letterSpacing="-0.02em"
+        >
+          다양한 비즈니스 파트너들과 함께 성장합니다.
+        </Heading>
+        </SlideFade>
+      </Box>
+      <Box overflow='hidden' bg='whiteAlpha.800'>
         <Box
           display='flex'
           gap={6}

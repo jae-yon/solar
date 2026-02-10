@@ -12,7 +12,6 @@ export default function TickerCard({ image, name }: TickerCardProps) {
       w='200px'
       h='100px'
       overflow='hidden'
-      bg='white'
       display='flex'
       alignItems='center'
       justifyContent='center'
