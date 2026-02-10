@@ -4,6 +4,8 @@ import { Box } from '@chakra-ui/react';
 
 import { useResponsive } from '@/hooks/useResponsive';
 
+import SlideFade from '@/components/common/SlideFade';
+
 import InsightContents from './InsightContents';
 import { InSightHeadDesktop, InSightHeadMobile } from './InSightHead';
 
@@ -95,10 +97,14 @@ export default function Insight() {
 
   return (
     <Box my={16} p={16} width='100%'>
-      <Box px={16}>
-        {isDesktop ? <InSightHeadDesktop region={region} setRegion={setRegion} /> : <InSightHeadMobile region={region} setRegion={setRegion} />}
-      </Box>
-      <InsightContents isDesktop={isDesktop} region={region} insightData={insightData} />
+      <SlideFade>
+        <Box px={8}>
+          {isDesktop ? <InSightHeadDesktop region={region} setRegion={setRegion} /> : <InSightHeadMobile region={region} setRegion={setRegion} />}
+        </Box>
+      </SlideFade>
+      <SlideFade>
+        <InsightContents isDesktop={isDesktop} region={region} insightData={insightData} />
+      </SlideFade>
     </Box>
   );
 }

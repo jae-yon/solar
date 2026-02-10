@@ -1,4 +1,5 @@
-  import { Box, Stack, Group } from '@chakra-ui/react';
+import { Box, Stack, Group } from '@chakra-ui/react';
+
 import { InsightCard } from './InsightCard';
 
 interface InsightContentsProps {
@@ -15,7 +16,7 @@ export default function InsightContents(props: InsightContentsProps) {
   }
 
   return (
-    <Stack width='100%' px={16} mt={4}>
+    <Stack width='100%' px={props.isDesktop ? 8 : 0} mt={4}>
       <Group
         display='flex'
         flexDirection={props.isDesktop ? 'row' : 'column'}
