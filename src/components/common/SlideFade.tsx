@@ -7,11 +7,13 @@ interface SlideFadeProps {
   children: React.ReactNode;
   delay?: number;
   direction?: 'left' | 'right' | 'top' | 'bottom';
+  /** true면 뷰포트에 한 번만 들어와도 이후 계속 표시(스크롤 시 사라지지 않음) */
+  once?: boolean;
 }
 
 export default function SlideFade(props: SlideFadeProps) {
   const ref = useRef(null);
-  const isView = useInView(ref);
+  const isView = useInView(ref, { once: props.once ?? false });
 
   const animationName = {
     openLeft: 'slide-from-left-custom, fade-in',
@@ -60,7 +62,7 @@ export default function SlideFade(props: SlideFadeProps) {
           _open: `${animationStart()}, fade-in`,
           _closed: `${animationEnd()}, fade-out`,
         }}
-        animationDuration={`${props.delay ?? 0.5}s`}
+        animationDuration={`${props.delay ?? 0.7}s`}
         animationTimingFunction='ease-in-out'
       >
         {props.children}

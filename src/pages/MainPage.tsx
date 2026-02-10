@@ -14,8 +14,8 @@ export default function MainPage() {
       <Hero />
       <Ticker />
       <Insight />
-      <Case />
       <Business />
+      <Case />
       <ScrollTopAnchor />
       <Footer />
     </>

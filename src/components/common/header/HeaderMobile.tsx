@@ -26,7 +26,7 @@ export default function HeaderMobile(props: headerLayoutProps) {
       >
         <Link href='/' display='flex' alignItems='center' gap={2} _hover={{ textDecoration: 'none' }}>
           <Image src={props.logo} alt='logo' width={8} height={8} objectFit='contain' />
-          <Text fontSize='md' fontWeight='semibold' color='gray.800'>
+          <Text fontSize='md' fontWeight='semibold' color={props.isScrolled ? 'gray.800' : 'white'}>
             (주)태양광에너지
           </Text>
         </Link>

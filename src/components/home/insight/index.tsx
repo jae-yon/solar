@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Box } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 
 import { useResponsive } from '@/hooks/useResponsive';
 
@@ -96,15 +96,28 @@ export default function Insight() {
   const [region, setRegion] = useState<'all' | 'land' | 'jeju'>('all');
 
   return (
-    <Box my={16} p={16} width='100%'>
-      <SlideFade direction="top">
-        <Box px={8}>
-          {isDesktop ? <InSightHeadDesktop region={region} setRegion={setRegion} /> : <InSightHeadMobile region={region} setRegion={setRegion} />}
-        </Box>
-      </SlideFade>
-      <SlideFade direction="top">
-        <InsightContents isDesktop={isDesktop} region={region} insightData={insightData} />
-      </SlideFade>
+    <Box
+      width="100%"
+      bg="gray.50"
+      height={isDesktop ? "720px" : "auto"}
+      mx="auto"
+      py={{ base: "48px", md: "80px" }}
+      px={{ base: 4, md: 8 }}
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <Flex width="100%" maxW="1280px" flexDirection="column" gap={8}>
+        <SlideFade direction="top">
+          <Box px={8}>
+            {isDesktop ? <InSightHeadDesktop region={region} setRegion={setRegion} /> : <InSightHeadMobile region={region} setRegion={setRegion} />}
+          </Box>
+        </SlideFade>
+        <SlideFade direction="top">
+          <InsightContents isDesktop={isDesktop} region={region} insightData={insightData} />
+        </SlideFade>
+      </Flex>
     </Box>
   );
 }

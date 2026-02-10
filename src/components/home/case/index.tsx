@@ -17,8 +17,20 @@ export default function Case() {
   const { isDesktop } = useResponsive();
 
   return (
-    <Box width="100%" maxW="1280px" mx="auto" py={{ base: 10, md: 16 }} px={{ base: 4, md: 8 }}>
+    <Box 
+      width="100%"
+      maxW="1280px"
+      height={isDesktop ? "720px" : "auto"}
+      mx="auto"
+      py={{ base: "48px", md: "80px" }}
+      px={{ base: 4, md: 8 }}
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
+    >
       <Flex
+        width="100%"
         flexDirection={isDesktop ? 'row' : 'column'}
         gap={{ base: 6, md: 8 }}
         alignItems={isDesktop ? 'center' : 'stretch'}

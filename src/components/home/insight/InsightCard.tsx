@@ -22,32 +22,29 @@ export function InsightCard(props: InsightCardProps) {
     <Stack>
       <Card.Root 
         px={2}
-        py={4}
+        py={6}
         variant='elevated'
         width='100%'
         borderRadius='xl' 
-        border='1px solid'
         borderColor='gray.100'
         overflow='hidden'
-        transition='all 0.2s'
-        _hover={{ transform: 'translateY(-4px)', boxShadow: 'md' }}
       >
         <Card.Header pb={2}>
           <Flex justify='center' align='center'>
             <Stack textAlign='center' gap={1}>
-              <Heading size='xl' fontWeight='500' color='gray.900'>{props.title}</Heading>
+              <Heading fontSize='xl' fontWeight='600' color='gray.900' letterSpacing='-0.02em'>{props.title}</Heading>
               <Text fontSize='sm' fontWeight='medium' color='gray.500'>{props.date}</Text>
             </Stack>
           </Flex>
         </Card.Header>
 
         <Card.Body py={4}>
-          <Stack gap={2}>
-            <Flex justify='center' align='baseline' gap={2}>
-              <Text ref={ref} fontSize='6xl' fontWeight='600' color='gray.900' lineHeight='1'>
+          <Stack gap={4}>
+            <Flex justify='center' align='baseline' gap={3}>
+              <Text ref={ref} fontSize={{ base: '64px', md: '48px', lg: '48px', xl: '64px' }} fontWeight='700' color='gray.900' letterSpacing='-0.02em' lineHeight='1'>
                 {price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </Text>
-              <Text fontSize='sm' fontWeight='bold' color='gray.500'>
+              <Text fontSize='sm' fontWeight='medium' color='gray.500'>
                 원/kWh
               </Text>
             </Flex>

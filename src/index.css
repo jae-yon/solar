@@ -126,7 +126,7 @@
 @keyframes slide-from-left-custom {
   0% {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateX(-40px);
   }
   100% {
     opacity: 1;
@@ -141,14 +141,14 @@
   }
   100% {
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateX(40px);
   }
 }
 
 @keyframes slide-from-right-custom {
   0% {
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateX(40px);
   }
   100% {
     opacity: 1;
@@ -163,7 +163,7 @@
   }
   100% {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateX(-40px);
   }
 }
   

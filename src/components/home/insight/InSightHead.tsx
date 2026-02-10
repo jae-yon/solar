@@ -10,7 +10,7 @@ export function InSightHeadDesktop(props: InSightHeadProps) {
     <Box display='flex' flexDirection='column' gap={4} mb={8}>
       <Heading
         fontSize={{ base: "36px", md: "52px" }}
-        fontWeight="600"
+        fontWeight="700"
         lineHeight="1.1"
         letterSpacing="-0.02em"
       >
@@ -23,9 +23,13 @@ export function InSightHeadDesktop(props: InSightHeadProps) {
           <Group>
             <Button 
               variant='outline' 
+              border='2px solid'
+              bg={props.region === 'all' ? 'orange.50' : 'white'}
               color={props.region === 'all' ? 'orange.500' : 'gray.500'} 
               borderColor={props.region === 'all' ? 'orange.500' : 'gray.500'} 
-              borderRadius='xl' 
+              borderRadius='lg' 
+              fontWeight='bold'
+              fontSize='md'
               px={4} 
               py={2}
               onClick={() => props.setRegion('all')}
@@ -39,9 +43,13 @@ export function InSightHeadDesktop(props: InSightHeadProps) {
             </Button>
             <Button 
               variant='outline' 
+              border='2px solid'
+              bg={props.region === 'land' ? 'orange.50' : 'white'}
               color={props.region === 'land' ? 'orange.500' : 'gray.500'} 
               borderColor={props.region === 'land' ? 'orange.500' : 'gray.500'} 
-              borderRadius='xl' 
+              borderRadius='lg' 
+              fontWeight='bold'
+              fontSize='md'
               px={4} 
               py={2}
               onClick={() => props.setRegion('land')}
@@ -55,9 +63,13 @@ export function InSightHeadDesktop(props: InSightHeadProps) {
             </Button>
             <Button 
               variant='outline' 
+              border='2px solid'
               color={props.region === 'jeju' ? 'orange.500' : 'gray.500'} 
+              bg={props.region === 'jeju' ? 'orange.50' : 'white'}
               borderColor={props.region === 'jeju' ? 'orange.500' : 'gray.500'} 
-              borderRadius='xl' 
+              borderRadius='lg' 
+              fontWeight='bold'
+              fontSize='md'
               px={4} 
               py={2}
               onClick={() => props.setRegion('jeju')}
@@ -79,15 +91,27 @@ export function InSightHeadDesktop(props: InSightHeadProps) {
 export function InSightHeadMobile(props: InSightHeadProps) {
   return (
     <Box display='flex' flexDirection='column' gap={4} mb={4}>
-      <Heading size='4xl' fontWeight='medium' textAlign='center'>실시간 가격 동향</Heading>
-      <Text fontSize='xl' fontWeight='medium' textAlign='center' color='gray.500' ms={1}>최신 가격 동향을 알아보고 시장 상황을 파악해 보세요.</Text>
+      <Heading
+        fontSize={{ base: "36px", md: "52px" }}
+        fontWeight="700"
+        lineHeight="1.1"
+        letterSpacing="-0.02em"
+        textAlign='center'
+      >
+        실시간 가격 동향
+      </Heading>
+      <Text fontSize='xl' fontWeight='medium' textAlign='center' color='gray.500' ms={1}>최신 가격 동향을 알아보고 시장 상황을 파악해 보세요</Text>
       <Stack display='flex' alignItems='center' justifyContent='center'>
         <Group>
           <Button 
             variant='outline' 
+            border='2px solid'
+            bg={props.region === 'all' ? 'orange.50' : 'white'}
             color={props.region === 'all' ? 'orange.500' : 'gray.500'} 
             borderColor={props.region === 'all' ? 'orange.500' : 'gray.500'} 
-            borderRadius='xl' 
+            borderRadius='lg' 
+            fontWeight='bold'
+            fontSize='md'
             px={4} 
             py={2}
             onClick={() => props.setRegion('all')}
@@ -101,9 +125,13 @@ export function InSightHeadMobile(props: InSightHeadProps) {
           </Button>
           <Button 
             variant='outline' 
+            border='2px solid'  
+            bg={props.region === 'land' ? 'orange.50' : 'white'}
             color={props.region === 'land' ? 'orange.500' : 'gray.500'} 
             borderColor={props.region === 'land' ? 'orange.500' : 'gray.500'} 
-            borderRadius='xl' 
+            borderRadius='lg' 
+            fontWeight='bold'
+            fontSize='md'
             px={4} 
             py={2}
             onClick={() => props.setRegion('land')}
@@ -117,9 +145,13 @@ export function InSightHeadMobile(props: InSightHeadProps) {
           </Button>
           <Button 
             variant='outline' 
+            border='2px solid'
+            bg={props.region === 'jeju' ? 'orange.50' : 'white'}
             color={props.region === 'jeju' ? 'orange.500' : 'gray.500'} 
             borderColor={props.region === 'jeju' ? 'orange.500' : 'gray.500'} 
-            borderRadius='xl' 
+            borderRadius='lg' 
+            fontWeight='bold'
+            fontSize='md'
             px={4} 
             py={2}
             onClick={() => props.setRegion('jeju')}

@@ -28,15 +28,15 @@ export default function Ticker() {
   const duplicatedItems = [...tickerItems, ...tickerItems];
 
   return (
-    <Box overflow='hidden' my={12}>
+    <Box overflow='hidden' mt={12} bg="gray.50">
       <Box textAlign='center' py={10} bg='whiteAlpha.800'>
         <SlideFade>
         <Heading
-          fontSize={{ base: "36px", md: "48px" }}
+          fontSize={{ base: "32px", md: "36px", lg: "48px" }}
           fontWeight="600"
           color="gray.800"
-          lineHeight="1.1"
           letterSpacing="-0.02em"
+          px={4}
         >
           다양한 비즈니스 파트너들과 함께 성장합니다
         </Heading>

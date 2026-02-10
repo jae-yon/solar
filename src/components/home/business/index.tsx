@@ -105,13 +105,13 @@ export default function Business() {
       px={{ base: "20px", md: "60px", lg: "80px" }}
     >
       <Box mb={{ base: "40px", md: "64px" }} maxW="600px">
-        <SlideFade>
+        <SlideFade once delay={1}>
           <BusinessHead />
         </SlideFade>
       </Box>
 
       <Box>
-        <SlideFade direction="left">
+        <SlideFade direction="left" once delay={2}>
           <BusinessContents 
             items={row1} 
             expandedRow={expandedRow1} 
@@ -120,7 +120,7 @@ export default function Business() {
           />
         </SlideFade>
 
-        <SlideFade direction="right">
+        <SlideFade direction="right" once delay={4}>
         <BusinessContents 
             items={row2} 
             expandedRow={expandedRow2} 
