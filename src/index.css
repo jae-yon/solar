@@ -79,6 +79,28 @@
   }
 }
 
+@keyframes slide-from-bottom-custom {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slide-to-top-custom {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.98);
+  }
+}
+
 .ticker-animation {
   animation: scroll 30s linear infinite;
 }
