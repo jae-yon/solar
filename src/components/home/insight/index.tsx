@@ -97,12 +97,12 @@ export default function Insight() {
 
   return (
     <Box my={16} p={16} width='100%'>
-      <SlideFade>
+      <SlideFade direction="top">
         <Box px={8}>
           {isDesktop ? <InSightHeadDesktop region={region} setRegion={setRegion} /> : <InSightHeadMobile region={region} setRegion={setRegion} />}
         </Box>
       </SlideFade>
-      <SlideFade>
+      <SlideFade direction="top">
         <InsightContents isDesktop={isDesktop} region={region} insightData={insightData} />
       </SlideFade>
     </Box>
