@@ -19,8 +19,6 @@ interface BusinessCardProps {
 }
 
 export default function BusinessCard(props: BusinessCardProps) {
-  const isLeft = props.expandFrom === 'left';
-
   return (
     <Box
       as="button"
