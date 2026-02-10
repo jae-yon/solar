@@ -51,7 +51,7 @@ export default function HeroContents() {
                 size='xl'
                 colorScheme='blue'
                 borderRadius='xl'
-                px={8}
+                px={12}
                 py={6}
                 fontSize='lg'
                 fontWeight='medium'
@@ -67,7 +67,7 @@ export default function HeroContents() {
                 color='whiteAlpha.900'
                 borderColor='white'
                 borderRadius='xl'
-                px={8}
+                px={6}
                 py={6}
                 fontSize='lg'
                 fontWeight='medium'
