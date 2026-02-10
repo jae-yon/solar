@@ -38,7 +38,7 @@ export default function Ticker() {
           lineHeight="1.1"
           letterSpacing="-0.02em"
         >
-          다양한 비즈니스 파트너들과 함께 성장합니다.
+          다양한 비즈니스 파트너들과 함께 성장합니다
         </Heading>
         </SlideFade>
       </Box>

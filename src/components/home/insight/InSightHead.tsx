@@ -18,7 +18,7 @@ export function InSightHeadDesktop(props: InSightHeadProps) {
       </Heading>
 
       <Box display='flex' alignItems='center' justifyContent='space-between' px={1} gap={4}>
-        <Text fontSize='2xl' fontWeight='medium' textAlign='start' color='gray.500'>최신 가격 동향을 알아보고 시장 상황을 파악해 보세요.</Text>
+        <Text fontSize='2xl' fontWeight='medium' textAlign='start' color='gray.500'>최신 가격 동향을 알아보고 시장 상황을 파악해 보세요</Text>
         <Stack>
           <Group>
             <Button 

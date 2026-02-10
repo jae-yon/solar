@@ -10,63 +10,63 @@ import BusinessContents from './BusinessContents';
 const businessItems = [
   {
     id: 1,
-    title: "Brand Strategy",
-    subtitle: "브랜드 전략",
+    title: "Energy Strategy",
+    subtitle: "에너지 전략 컨설팅",
     description:
-      "데이터 기반의 브랜드 포지셔닝과 아이덴티티 설계로 시장 내 독보적인 위치를 구축합니다. 고객 인사이트를 기반으로 장기적인 브랜드 가치를 창출합니다.",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-    accent: "#C9A96E",
-    href: "#brand",
+      "글로벌 에너지 트렌드와 정책 분석을 바탕으로 최적의 재생 에너지 포트폴리오를 설계합니다. RE100 달성 및 ESG 경영을 위한 장기적 로드맵을 제시합니다.",
+    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80",
+    accent: "#27AE60", // 유지보수의 안정적인 초록색
+    href: "#strategy",
   },
   {
     id: 2,
-    title: "Digital Marketing",
-    subtitle: "디지털 마케팅",
+    title: "Solar Engineering",
+    subtitle: "태양광 발전 엔지니어링",
     description:
-      "SEO, SEM, SNS 통합 전략을 통해 디지털 채널에서의 브랜드 가시성과 전환율을 극대화합니다. 성과 기반 캠페인으로 ROI를 최적화합니다.",
-    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80",
-    accent: "#7B9E87",
-    href: "#digital",
+      "고효율 모듈 선정부터 최적의 이격거리 설계까지, 발전 효율을 극대화하는 정밀 시공을 제공합니다. 지형 및 기후 데이터를 분석하여 수익성을 최적화합니다.",
+    image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80",
+    accent: "#F1C40F", // 태양광의 밝은 노란색
+    href: "#solar",
   },
   {
     id: 3,
-    title: "Creative Design",
-    subtitle: "크리에이티브 디자인",
+    title: "O&M Services",
+    subtitle: "통합 유지보수 관리",
     description:
-      "시각적 스토리텔링으로 브랜드의 본질을 표현합니다. UI/UX부터 인쇄물까지 일관된 브랜드 경험을 설계하고 제작합니다.",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80",
-    accent: "#9B8EC4",
-    href: "#design",
+      "실시간 모니터링 시스템을 통해 발전소의 상태를 24시간 관리합니다. 예방적 점검과 신속한 장애 대응으로 다운타임을 최소화하고 발전량 손실을 방지합니다.",
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80",
+    accent: "#2980B9", // 기술력과 전력의 신뢰감을 주는 블루
+    href: "#maintenance",
   },
   {
     id: 4,
-    title: "Content Studio",
-    subtitle: "콘텐츠 스튜디오",
+    title: "Grid Solutions",
+    subtitle: "지능형 전력망 솔루션",
     description:
-      "영상, 사진, 카피라이팅을 아우르는 통합 콘텐츠 제작 서비스입니다. 브랜드 메시지를 다양한 형식으로 생동감 있게 표현합니다.",
-    image: "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=800&q=80",
-    accent: "#E07A5F",
-    href: "#content",
+      "ESS(에너지 저장 장치) 연계 및 VPP(가상 발전소) 기술을 통해 불안정한 재생 에너지 공급을 안정화합니다. 전력 거래 최적화로 부가 가치를 창출합니다.",
+    image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80",
+    accent: "#E67E22", // 태양의 따뜻한 오렌지
+    href: "#grid",
   },
   {
     id: 5,
-    title: "Tech Solutions",
-    subtitle: "테크 솔루션",
+    title: "Green Tech R&D",
+    subtitle: "그린 테크 연구소",
     description:
-      "웹사이트, 앱, 자동화 시스템 구축으로 비즈니스 효율성을 높입니다. 최신 기술 스택으로 확장 가능한 디지털 인프라를 설계합니다.",
-    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&q=80",
-    accent: "#4ECDC4",
-    href: "#tech",
+      "차세대 고효율 태양광 셀과 수소 에너지 융합 기술을 연구합니다. 지속 가능한 미래를 위한 독자적인 친환경 기술 스택과 인프라를 구축합니다.",
+    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80",
+    accent: "#16A085", // 연구/기술 느낌의 청록색
+    href: "#research",
   },
   {
     id: 6,
-    title: "Global Expansion",
-    subtitle: "글로벌 확장",
+    title: "Global Net-Zero",
+    subtitle: "글로벌 탄소중립 확장",
     description:
-      "해외 시장 진출 전략 수립부터 현지화까지 전 과정을 지원합니다. 글로벌 네트워크를 활용하여 새로운 시장에서의 성공을 가속화합니다.",
+      "해외 탄소 배출권 거래 및 글로벌 신재생 에너지 프로젝트 파이낸싱을 지원합니다. 전 세계 네트워크를 활용하여 국경 없는 에너지 전환을 선도합니다.",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
-    accent: "#F7B731",
-    href: "#global",
+    accent: "#8E44AD", // 글로벌 미래 가치의 보라색
+    href: "#netzero",
   },
 ];
 

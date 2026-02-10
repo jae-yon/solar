@@ -70,19 +70,6 @@ export default function BusinessCard(props: BusinessCardProps) {
           transition="all 0.45s ease 0.2s"
           pointerEvents={props.isExpanded ? "auto" : "none"}
         >
-          {/* Tag */}
-          <Text
-            fontSize="10px"
-            fontWeight="700"
-            letterSpacing="0.3em"
-            textTransform="uppercase"
-            color={props.item.accent}
-            mb="12px"
-            fontFamily="'DM Sans', sans-serif"
-          >
-            {props.item.subtitle}
-          </Text>
-
           {/* Title */}
           <Text
             fontSize={{ base: "28px", md: "36px" }}

@@ -1,4 +1,4 @@
-import { Carousel, HStack, IconButton, Span } from '@chakra-ui/react';
+import { Carousel, HStack, IconButton } from '@chakra-ui/react';
 import { LucideChevronLeft, LucideChevronRight } from 'lucide-react';
 
 import CaseCard from './CaseCard';
@@ -13,11 +13,12 @@ export default function CaseContents(props: CaseContentsProps) {
       slideCount={props.items.length}
       slidesPerPage={1}
       allowMouseDrag
+      spacing="16px"
+      autoplay={{ delay: 6000 }}
     >
       {/* 캐러셀 헤더 */}
-      <HStack justify="space-between">
-        <Span fontWeight="bold" fontSize="16px" letterSpacing="-0.02em" color="gray.600" ms={4}>시공 사례</Span>
-        <HStack>
+      <HStack justify="end" px={{ base: 0, md: 2 }}>
+        <HStack gap={1}>
           <Carousel.PrevTrigger asChild>
             <IconButton
               size="xs"
@@ -47,7 +48,7 @@ export default function CaseContents(props: CaseContentsProps) {
         </HStack>
       </HStack>
       {/* 캐러셀 아이템 그룹 - 헤더 아래 별도 블록 */}
-      <Carousel.ItemGroup>
+      <Carousel.ItemGroup gap={{ base: 2, md: 4 }} mt={{ base: 2, md: 0 }}>
         {props.items.map((item, index) => (
           <Carousel.Item key={index} index={index}>
             <CaseCard item={item} />

@@ -16,8 +16,8 @@ export default function CaseCard(props: CaseCardProps) {
       position="relative"
       overflow="hidden"
       w="100%"
-      h="300px"
-      borderRadius="xl"
+      h={{ base: "260px", sm: "280px", md: "360px" }}
+      borderRadius={{ base: "lg", md: "xl" }}
       role="group"
     >
       {/* Background Image */}
@@ -45,21 +45,21 @@ export default function CaseCard(props: CaseCardProps) {
         inset="0"
         direction="column"
         justify="flex-end"
-        p={{ base: '24px 20px', md: '32px 28px' }}
+        p={{ base: '16px 18px', sm: '20px 22px', md: '32px 28px' }}
       >
         <Text
-          fontSize={{ base: '22px', md: '26px' }}
+          fontSize={{ base: '18px', sm: '20px', md: '26px' }}
           fontWeight="600"
           color="white"
           lineHeight="1.2"
-          mb="10px"
+          mb={{ base: '6px', md: '10px' }}
           letterSpacing="-0.01em"
         >
           {props.item.title}
         </Text>
 
         <Text
-          fontSize={{ base: '12px', md: '13px' }}
+          fontSize={{ base: '11px', sm: '12px', md: '13px' }}
           color="rgba(255,255,255,0.85)"
           lineHeight="1.6"
         >

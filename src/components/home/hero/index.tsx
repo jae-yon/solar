@@ -4,15 +4,13 @@ import { useEffect, useState } from 'react';
 import HeroContents from './HeroContents';
 
 import heroImage1 from '@/assets/images/hero/hero_img_01.jpg';
-import heroImage2 from '@/assets/images/hero/hero_img_02.jpg';
 import heroImage3 from '@/assets/images/hero/hero_img_03.jpeg';
-import heroImage4 from '@/assets/images/hero/hero_img_04.jpg';
 
 const heroImages = [
-  { image: heroImage1 },
-  { image: heroImage2 },
   { image: heroImage3 },
-  { image: heroImage4 },
+  { image: "https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&w=1920&q=80" },
+  { image: heroImage1 },
+  { image: "https://images.unsplash.com/photo-1655300256620-680cb0f1cec3?auto=format&fit=crop&w=800&q=80" },
 ];
 
 const FADE_DURATION_MS = 2000;

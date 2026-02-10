@@ -61,7 +61,7 @@ export default function SlideFade(props: SlideFadeProps) {
           _closed: `${animationEnd()}, fade-out`,
         }}
         animationDuration={`${props.delay ?? 0.5}s`}
-        animationTimingFunction='ease-out'
+        animationTimingFunction='ease-in-out'
       >
         {props.children}
       </Presence>

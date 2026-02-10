@@ -4,6 +4,7 @@ import { useResponsive } from '@/hooks/useResponsive';
 
 import CaseHead from './CaseHead';
 import CaseContents from './CaseContents';
+import SlideFade from '@/components/common/SlideFade';
 
 const caseItems = [
   { title: "전라남도 해남", desc: "26년 2월 준공 예정", img: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=1200" },
@@ -16,24 +17,42 @@ export default function Case() {
   const { isDesktop } = useResponsive();
 
   return (
-    <Flex 
-      flexDirection={isDesktop ? 'row' : 'column'} 
-      gap={4} 
-      py={16} 
-      px={8} 
-      width='100%'
-      alignItems='center'
-    >
-      <Box 
-        flex={1}
-        w='1/2'
-        px={8}
+    <Box width="100%" maxW="1280px" mx="auto" py={{ base: 10, md: 16 }} px={{ base: 4, md: 8 }}>
+      <Flex
+        flexDirection={isDesktop ? 'row' : 'column'}
+        gap={{ base: 6, md: 8 }}
+        alignItems={isDesktop ? 'center' : 'stretch'}
+        justifyContent="center"
       >
-        <CaseContents items={caseItems} />
-      </Box>
-      <Box w='1/2'>
-        <CaseHead />
-      </Box>
-    </Flex>
+        {/* 모바일: CaseHead 위, CaseContents 아래 / 데스크톱: Contents 왼쪽, Head 오른쪽 */}
+        {!isDesktop ? (
+          <>
+            <Box width="100%">
+              <SlideFade>
+                <CaseHead isDesktop={isDesktop} />
+              </SlideFade>
+            </Box>
+            <Box width="100%" flex={1}>
+              <SlideFade>
+                <CaseContents items={caseItems} />
+              </SlideFade>
+            </Box>
+          </>
+        ) : (
+          <>
+            <Box flex={1} minW={0} maxW="50%" px={{ md: 4 }}>
+              <SlideFade direction="left">
+                <CaseContents items={caseItems} />
+              </SlideFade>
+            </Box>
+            <Box flexShrink={0} width={{ md: '50%' }} maxW="50%" px={{ md: 4 }}>
+              <SlideFade direction="right">
+                <CaseHead isDesktop={isDesktop} />
+              </SlideFade>
+            </Box>
+          </>
+        )}
+      </Flex>
+    </Box>
   );
 }

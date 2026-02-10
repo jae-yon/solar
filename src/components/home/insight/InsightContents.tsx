@@ -22,7 +22,7 @@ export default function InsightContents(props: InsightContentsProps) {
         flexDirection={props.isDesktop ? 'row' : 'column'}
         alignItems='stretch'
         justifyContent='stretch'
-        gap={4}
+        gap={8}
         width='100%'
         flexWrap='nowrap'
       >
