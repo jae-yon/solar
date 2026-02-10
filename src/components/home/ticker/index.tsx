@@ -26,7 +26,7 @@ export default function Ticker() {
   const duplicatedItems = [...tickerItems, ...tickerItems];
 
   return (
-    <Box overflow='hidden' bg='gray.100'>
+    <Box overflow='hidden' bg='gray.50'>
       <Box overflow='hidden' py={4}>
         <Box
           display='flex'
